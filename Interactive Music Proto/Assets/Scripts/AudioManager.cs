@@ -23,6 +23,10 @@ public class AudioManager : MonoBehaviour
     public bool DebugStop;
     public bool PhaseIntro, Phase1, Phase2;
     public float TransitionTime = 1f;
+    [Header("Metronome")]
+    public Metronome GameMetronome;
+
+    private double _globalTick;
 
     public static AudioManager audioManag;
 
@@ -64,9 +68,9 @@ public class AudioManager : MonoBehaviour
 
     private void Play()
     {
-        musicA.Play();
-        musicB.Play();
-        musicC.Play();
+        musicA.PlayScheduled(_globalTick);
+        musicB.PlayScheduled(_globalTick);
+        musicC.PlayScheduled(_globalTick);
 
         StartMus.TransitionTo(TransitionTime);
 
@@ -91,5 +95,27 @@ public class AudioManager : MonoBehaviour
         yield break;
     }
 
+    #region Metronome
+    private void OnEnable()
+    {
+        if (GameMetronome != null)
+        {
+            GameMetronome.Ticked += HandleTicked;
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (GameMetronome != null)
+        {
+            GameMetronome.Ticked -= HandleTicked;
+        }
+    }
+
+    private void HandleTicked(double tickTime)
+    {
+        _globalTick = tickTime;
+    }
+    #endregion
 
 }
