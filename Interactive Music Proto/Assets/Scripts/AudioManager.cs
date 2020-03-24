@@ -9,24 +9,26 @@ public class AudioManager : MonoBehaviour
     public AudioSource musicA;
     public AudioSource musicB;
     public AudioSource musicC;
+    public AudioSource musicD;
 
     [Header("Start/Stop Snapshots")]
     public AudioMixerSnapshot StartMus;
     public AudioMixerSnapshot StopMus;
 
-    [Header("TransitionSnapshots")]
-    public AudioMixerSnapshot Intro;
-    public AudioMixerSnapshot MusPhase1;
-    public AudioMixerSnapshot MusPhase2;
     [Header("DebugControls")]
-    public bool DebugPlay;
-    public bool DebugStop;
-    public bool PhaseIntro, Phase1, Phase2;
+    public bool DebugPlayAll;
+    public bool DebugStopAll;
+    public bool PhaseIntro, Phase1, Phase2, Transition, PhaseFinal;
     public float TransitionTime = 1f;
+
     [Header("Metronome")]
     public Metronome GameMetronome;
 
-    private double _globalTick;
+    [Header("TestAudioClass")]//TO remove when applied to game
+    public BossMusicA _testMusic;
+
+    [HideInInspector]
+    public double globalTick;
 
     public static AudioManager audioManag;
 
@@ -37,53 +39,76 @@ public class AudioManager : MonoBehaviour
 
     private void Update()
     {
-        if (DebugPlay)
+        if (DebugPlayAll)
         {
-            Play();
+            PlayAll();
         }
 
-        if (DebugStop)
+        if (DebugStopAll)
         {
-            Stop();
+            StopAll();
         }
 
        if (PhaseIntro)
         {
-            Intro.TransitionTo(TransitionTime);
+            if (_testMusic != null)
+                _testMusic.PlayIntro();
+
             PhaseIntro = false;
         }
 
        if (Phase1)
         {
-            MusPhase1.TransitionTo(TransitionTime);
+            if (_testMusic != null)
+                _testMusic.PlayPhaseOne();
+
             Phase1 = false;
         }
 
        if (Phase2)
         {
-            MusPhase2.TransitionTo(TransitionTime);
+            if (_testMusic != null)
+                _testMusic.PlayPhaseTwo();
+
             Phase2 = false;
+        }
+
+       if (Transition)
+        {
+            if (_testMusic != null)
+                _testMusic.PlayTransition();
+
+            Transition = false;
+        }
+
+       if (PhaseFinal)
+        {
+            if (_testMusic != null)
+                _testMusic.PlayFinalPunch();
+
+            PhaseFinal = false;
         }
     }
 
-    private void Play()
+    private void PlayAll()
     {
-        musicA.PlayScheduled(_globalTick);
-        musicB.PlayScheduled(_globalTick);
-        musicC.PlayScheduled(_globalTick);
-
         StartMus.TransitionTo(TransitionTime);
 
-        DebugPlay = false;
+        musicA.PlayScheduled(globalTick);
+        musicB.PlayScheduled(globalTick);
+        musicC.PlayScheduled(globalTick);
+        musicD.PlayScheduled(globalTick);
+
+        DebugPlayAll = false;
     }
 
-    private void Stop()
+    private void StopAll()
     {
-        StartCoroutine(StopMusic());
-        DebugStop = false;
+        StartCoroutine(StopAllMusic());
+        DebugStopAll = false;
     }
 
-    IEnumerator StopMusic()
+    IEnumerator StopAllMusic()
     {
         StopMus.TransitionTo(TransitionTime);
         yield return new WaitForSeconds(TransitionTime);
@@ -91,6 +116,7 @@ public class AudioManager : MonoBehaviour
         musicA.Stop();
         musicB.Stop();
         musicC.Stop();
+        musicD.Stop();
 
         yield break;
     }
@@ -114,7 +140,7 @@ public class AudioManager : MonoBehaviour
 
     private void HandleTicked(double tickTime)
     {
-        _globalTick = tickTime;
+        globalTick = tickTime;
     }
     #endregion
 

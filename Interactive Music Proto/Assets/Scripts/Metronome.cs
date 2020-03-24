@@ -11,8 +11,8 @@ public class Metronome : MonoBehaviour
         /// </summary>
         public event Action<double> Ticked;
 
-        [SerializeField, Tooltip("The tempo in beats per minute"), Range(15f, 200f)] private double _tempo = 120.0;
-        [SerializeField, Tooltip("The number of ticks per beat"), Range(1, 8)] private int _subdivisions = 4;
+        [Tooltip("The tempo in beats per minute"), Range(15f, 200f)] public double _tempo = 120.0;
+        [Tooltip("The number of ticks per beat"), Range(1, 8)] public int _subdivisions = 4;
 
         // the length of a single tick in seconds
         private double _tickLength;
@@ -84,5 +84,11 @@ public class Metronome : MonoBehaviour
                 // increment the next tick time
                 _nextTickTime += _tickLength;
             }
+        }
+
+        public void TempoChange(double newTempo, int newSubd)
+        {
+            _tempo = newTempo;
+            _subdivisions = newSubd;
         }
     }
