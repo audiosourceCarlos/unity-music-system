@@ -53,12 +53,16 @@ public class BossMusicA : MonoBehaviour
 
     private void Start()
     {
-        _tick = AudioManager.audioManag.globalTick;
+        _tick = MusicManager.musicManag.globalTick;
     }
 
     public void PlayIntro()
     {
-        _trackA.clip = Intro; //shares track with FinalPunch
+        if (_trackA.clip != Intro)
+        {
+            _trackA.clip = Intro; //shares track with FinalPunch
+        }
+
         IntroState.TransitionTo(TransIntro);
 
         _trackA.PlayScheduled(_tick);
@@ -87,7 +91,11 @@ public class BossMusicA : MonoBehaviour
 
     public void PlayFinalPunch()
     {
-        _trackA.clip = FinalPunch; //shares track with FinalPunch
+        if (_trackA.clip != FinalPunch)
+        {
+            _trackA.clip = FinalPunch; //shares track with FinalPunch
+        }
+
         FinalState.TransitionTo(TransFin);
 
         _trackA.PlayScheduled(_tick);
