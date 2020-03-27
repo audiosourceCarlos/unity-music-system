@@ -58,10 +58,7 @@ public class BossMusicA : MonoBehaviour
 
     public void PlayIntro()
     {
-        if (_trackA.clip != Intro)
-        {
-            _trackA.clip = Intro; //shares track with FinalPunch
-        }
+        _trackA.clip = Intro; //shares track with FinalPunch
 
         IntroState.TransitionTo(TransIntro);
 
@@ -91,10 +88,8 @@ public class BossMusicA : MonoBehaviour
 
     public void PlayFinalPunch()
     {
-        if (_trackA.clip != FinalPunch)
-        {
-            _trackA.clip = FinalPunch; //shares track with FinalPunch
-        }
+
+        _trackA.clip = FinalPunch; //shares track with FinalPunch
 
         FinalState.TransitionTo(TransFin);
 

@@ -412,27 +412,27 @@ PrefabInstance:
         type: 3}
       propertyPath: Intro
       value: 
-      objectReference: {fileID: 8300000, guid: e201318aa7e294b4088e14b16e9121e2, type: 3}
+      objectReference: {fileID: 8300000, guid: fe14fe00a5f924a249eb5403c3530664, type: 3}
     - target: {fileID: 7195913513949629503, guid: f72b085a6639540cba9723175782f628,
         type: 3}
       propertyPath: Phase1
       value: 
-      objectReference: {fileID: 8300000, guid: 199fd40e9d74f43faa5bc7a9819c96db, type: 3}
+      objectReference: {fileID: 8300000, guid: ac52d7238998e4b1d9b38d6fb5b15360, type: 3}
     - target: {fileID: 7195913513949629503, guid: f72b085a6639540cba9723175782f628,
         type: 3}
       propertyPath: Phase2
       value: 
-      objectReference: {fileID: 8300000, guid: 6b8083954ca084e18a63050e4733146b, type: 3}
+      objectReference: {fileID: 8300000, guid: ed07fd66aa5664d1c910a455fb1c83e4, type: 3}
     - target: {fileID: 7195913513949629503, guid: f72b085a6639540cba9723175782f628,
         type: 3}
       propertyPath: Transition
       value: 
-      objectReference: {fileID: 8300000, guid: 8a68828d21bde45718cca5d9a3cb6d2c, type: 3}
+      objectReference: {fileID: 8300000, guid: a8a4600c2ae0448ccbd4ba3fbcb00e14, type: 3}
     - target: {fileID: 7195913513949629503, guid: f72b085a6639540cba9723175782f628,
         type: 3}
       propertyPath: FinalPunch
       value: 
-      objectReference: {fileID: 8300000, guid: 64dbde008a42145869f5471f3ce76e2f, type: 3}
+      objectReference: {fileID: 8300000, guid: fe14fe00a5f924a249eb5403c3530664, type: 3}
     - target: {fileID: 7195913513949629503, guid: f72b085a6639540cba9723175782f628,
         type: 3}
       propertyPath: IntroState
@@ -466,22 +466,37 @@ PrefabInstance:
     - target: {fileID: 7195913513949629503, guid: f72b085a6639540cba9723175782f628,
         type: 3}
       propertyPath: TransIntro
-      value: 1
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7195913513949629503, guid: f72b085a6639540cba9723175782f628,
         type: 3}
       propertyPath: TransP1
-      value: 1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7195913513949629503, guid: f72b085a6639540cba9723175782f628,
         type: 3}
       propertyPath: TransTran
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7195913513949629503, guid: f72b085a6639540cba9723175782f628,
         type: 3}
       propertyPath: TransFin
-      value: 2
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7195913513949629503, guid: f72b085a6639540cba9723175782f628,
+        type: 3}
+      propertyPath: _gametempo
+      value: 137
+      objectReference: {fileID: 0}
+    - target: {fileID: 8306506827333444622, guid: f72b085a6639540cba9723175782f628,
+        type: 3}
+      propertyPath: Phase1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8306506827333444622, guid: f72b085a6639540cba9723175782f628,
+        type: 3}
+      propertyPath: Transition
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f72b085a6639540cba9723175782f628, type: 3}

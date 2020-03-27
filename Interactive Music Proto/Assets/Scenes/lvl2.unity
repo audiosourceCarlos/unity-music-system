@@ -405,25 +405,25 @@ PrefabInstance:
         type: 3}
       propertyPath: Phase1State
       value: 
-      objectReference: {fileID: -7223402390590599809, guid: f93cb04c4c8d5442c9795a6a2529e326,
+      objectReference: {fileID: -8453835095278299751, guid: f93cb04c4c8d5442c9795a6a2529e326,
         type: 2}
     - target: {fileID: 7195913513949629503, guid: f72b085a6639540cba9723175782f628,
         type: 3}
       propertyPath: Phase2State
       value: 
-      objectReference: {fileID: -8430356785272211252, guid: f93cb04c4c8d5442c9795a6a2529e326,
+      objectReference: {fileID: -1987433898623911673, guid: f93cb04c4c8d5442c9795a6a2529e326,
         type: 2}
     - target: {fileID: 7195913513949629503, guid: f72b085a6639540cba9723175782f628,
         type: 3}
       propertyPath: TransitionState
       value: 
-      objectReference: {fileID: 307816387104774091, guid: f93cb04c4c8d5442c9795a6a2529e326,
+      objectReference: {fileID: 7226048505363737750, guid: f93cb04c4c8d5442c9795a6a2529e326,
         type: 2}
     - target: {fileID: 7195913513949629503, guid: f72b085a6639540cba9723175782f628,
         type: 3}
       propertyPath: FinalState
       value: 
-      objectReference: {fileID: 8325380539645907994, guid: f93cb04c4c8d5442c9795a6a2529e326,
+      objectReference: {fileID: -1741501976927134358, guid: f93cb04c4c8d5442c9795a6a2529e326,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f72b085a6639540cba9723175782f628, type: 3}
