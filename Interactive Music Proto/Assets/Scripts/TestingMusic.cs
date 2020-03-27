@@ -12,12 +12,30 @@ public class TestingMusic : MonoBehaviour
     public bool Phase1, Phase2, Transition, PhaseFinal;
 
 
-    void Update()
+
+    private void OnEnable()
+    {
+        if (MusicManager.musicManag.GameMetronome != null)
+        {
+            MusicManager.musicManag.GameMetronome.Ticked += GameMetronome_Ticked;
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (MusicManager.musicManag.GameMetronome != null)
+        {
+            MusicManager.musicManag.GameMetronome.Ticked -= GameMetronome_Ticked;
+        }
+    }
+
+    //METRONOME TIME
+    private void GameMetronome_Ticked(double obj)
     {
         if (PhaseIntro)
         {
             if (_testMusic != null)
-                _testMusic.PlayIntro();
+                _testMusic.PlayIntro(obj);
 
             PhaseIntro = false;
         }
@@ -25,7 +43,7 @@ public class TestingMusic : MonoBehaviour
         if (Phase1)
         {
             if (_testMusic != null)
-                _testMusic.PlayPhaseOne();
+                _testMusic.PlayPhaseOne(obj);
 
             Phase1 = false;
         }
@@ -33,7 +51,7 @@ public class TestingMusic : MonoBehaviour
         if (Phase2)
         {
             if (_testMusic != null)
-                _testMusic.PlayPhaseTwo();
+                _testMusic.PlayPhaseTwo(obj);
 
             Phase2 = false;
         }
@@ -41,7 +59,7 @@ public class TestingMusic : MonoBehaviour
         if (Transition)
         {
             if (_testMusic != null)
-                _testMusic.PlayTransition();
+                _testMusic.PlayTransition(obj);
 
             Transition = false;
         }
@@ -49,10 +67,11 @@ public class TestingMusic : MonoBehaviour
         if (PhaseFinal)
         {
             if (_testMusic != null)
-                _testMusic.PlayFinalPunch();
+                _testMusic.PlayFinalPunch(obj);
 
             PhaseFinal = false;
         }
+
     }
 
 }

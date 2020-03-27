@@ -32,7 +32,6 @@ public class BossMusicA : MonoBehaviour
 
     private AudioSource _trackA, _trackB, _trackC, _trackD;
     private Metronome _metronome;
-    private double _tick;
 
 
     private void Awake()
@@ -51,51 +50,44 @@ public class BossMusicA : MonoBehaviour
         _trackD.clip = Transition;
     }
 
-    private void Start()
-    {
-        _tick = MusicManager.musicManag.globalTick;
-    }
-
-    public void PlayIntro()
+    public void PlayIntro(double obj)
     {
         _trackA.clip = Intro; //shares track with FinalPunch
 
         IntroState.TransitionTo(TransIntro);
 
-        _trackA.PlayScheduled(_tick);
+        _trackA.PlayScheduled(obj);
     }
 
-    public void PlayPhaseOne()
+    public void PlayPhaseOne(double obj)
     {
         Phase1State.TransitionTo(TransP1);
 
-        _trackB.PlayScheduled(_tick);
+        _trackB.PlayScheduled(obj);
     }
 
-    public void PlayPhaseTwo()
+    public void PlayPhaseTwo(double obj)
     {
         Phase2State.TransitionTo(TransP2);
 
-        _trackC.PlayScheduled(_tick);
+        _trackC.PlayScheduled(obj);
     }
 
-    public void PlayTransition()
+    public void PlayTransition(double obj)
     {
         TransitionState.TransitionTo(TransTran);
 
-        _trackD.PlayScheduled(_tick);
+        _trackD.PlayScheduled(obj);
     }
 
-    public void PlayFinalPunch()
+    public void PlayFinalPunch(double obj)
     {
 
         _trackA.clip = FinalPunch; //shares track with FinalPunch
 
         FinalState.TransitionTo(TransFin);
 
-        _trackA.PlayScheduled(_tick);
+        _trackA.PlayScheduled(obj);
 
     }
-
-
 }

@@ -412,27 +412,27 @@ PrefabInstance:
         type: 3}
       propertyPath: Intro
       value: 
-      objectReference: {fileID: 8300000, guid: fe14fe00a5f924a249eb5403c3530664, type: 3}
+      objectReference: {fileID: 8300000, guid: 6464fb50cbe8f4deca0b946727d501c9, type: 3}
     - target: {fileID: 7195913513949629503, guid: f72b085a6639540cba9723175782f628,
         type: 3}
       propertyPath: Phase1
       value: 
-      objectReference: {fileID: 8300000, guid: ac52d7238998e4b1d9b38d6fb5b15360, type: 3}
+      objectReference: {fileID: 8300000, guid: be4c5cfeee2da416b9a58115c9b07cb8, type: 3}
     - target: {fileID: 7195913513949629503, guid: f72b085a6639540cba9723175782f628,
         type: 3}
       propertyPath: Phase2
       value: 
-      objectReference: {fileID: 8300000, guid: ed07fd66aa5664d1c910a455fb1c83e4, type: 3}
+      objectReference: {fileID: 8300000, guid: 5c4434c701940408e81bb2fa59a341dc, type: 3}
     - target: {fileID: 7195913513949629503, guid: f72b085a6639540cba9723175782f628,
         type: 3}
       propertyPath: Transition
       value: 
-      objectReference: {fileID: 8300000, guid: a8a4600c2ae0448ccbd4ba3fbcb00e14, type: 3}
+      objectReference: {fileID: 8300000, guid: 7f76b1675a666424b98e3b26d18b9cda, type: 3}
     - target: {fileID: 7195913513949629503, guid: f72b085a6639540cba9723175782f628,
         type: 3}
       propertyPath: FinalPunch
       value: 
-      objectReference: {fileID: 8300000, guid: fe14fe00a5f924a249eb5403c3530664, type: 3}
+      objectReference: {fileID: 8300000, guid: 6464fb50cbe8f4deca0b946727d501c9, type: 3}
     - target: {fileID: 7195913513949629503, guid: f72b085a6639540cba9723175782f628,
         type: 3}
       propertyPath: IntroState
@@ -488,6 +488,11 @@ PrefabInstance:
       propertyPath: _gametempo
       value: 137
       objectReference: {fileID: 0}
+    - target: {fileID: 7195913513949629503, guid: f72b085a6639540cba9723175782f628,
+        type: 3}
+      propertyPath: _subdivision
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8306506827333444622, guid: f72b085a6639540cba9723175782f628,
         type: 3}
       propertyPath: Phase1
@@ -496,7 +501,7 @@ PrefabInstance:
     - target: {fileID: 8306506827333444622, guid: f72b085a6639540cba9723175782f628,
         type: 3}
       propertyPath: Transition
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f72b085a6639540cba9723175782f628, type: 3}
@@ -566,6 +571,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 9064935624307459330, guid: 05355fa287e8949bd99d255b71ad8e23,
+        type: 3}
+      propertyPath: _subdivisions
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05355fa287e8949bd99d255b71ad8e23, type: 3}
